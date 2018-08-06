@@ -6,7 +6,7 @@ Encoding: UTF-8
 def main():
     """ This function computes
     the square root of a given number"""
-    numberabc = input()
+    number = input()
     epsilon = 0.01
     low = 0
     high = int(number)
