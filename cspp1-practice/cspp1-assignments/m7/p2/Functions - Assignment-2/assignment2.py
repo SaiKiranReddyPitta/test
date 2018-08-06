@@ -7,9 +7,9 @@ Encoding: utf - 8
 '''
 def paying_debt_off_in_a_year(balance, annual_interest_rate):
     '''compute the lowest monthly payment '''
-     monthly_interest_rate = annual_interest_rate/12
-     monthly_payment = 0
-     newbalance = balance
+    monthly_interest_rate = annual_interest_rate/12
+    monthly_payment = 0
+    newbalance = balance
     while newbalance > 0:
         monthly_payment += 10
         newbalance = balance
