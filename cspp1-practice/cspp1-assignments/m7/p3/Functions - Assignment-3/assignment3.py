@@ -18,14 +18,14 @@ def paying_debt_off_in_a_year(initial_balance, annual_interest_rate):
         ubm = initial_balance
         mfp = (lower_bound+upper_bound)/2.0
         # mfp = int(mfp*100)/100.0
-         for _ in range(12):
+        for _ in range(12):
             mub = ubm - mfp
             ubm = mub + mir*mub
-         if ubm > epsilon_val:
+        if ubm > epsilon_val:
             lower_bound = mfp
-         elif ubm < -epsilon_val:
+        elif ubm < -epsilon_val:
             upper_bound = mfp
-         else:
+        else:
             break
     # mfp = int(mfp*100)/100.0
     return "Lowest Payment: "+str(round(mfp, 2))
