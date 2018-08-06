@@ -1,20 +1,18 @@
-# Write a python program to find the square root of the given number
-# using approximation method
 
-# testcase 1
-# input: 25
-# output: 4.999999999999998
+'''
+Author : Sai Kiran Reddy
+Date : 03 August 2018
+Encoding: utf-8
 
-# testcase 2
-# input: 49
-# output: 6.999999999999991
-
+'''
 def main():
-	s = raw_input()
-	# epsilon and step are initialized
-	# don't change these values
-	epsilon = 0.01
-	# your code starts here
-
-if __name__== "__main__":
-	main()
+    ''' This function computes the square root
+     of given number using Newton- Rapson method'''
+    squareno = int(input())
+    epsilon = 0.01
+    guess = squareno / 2.0
+    while abs(guess**2 - squareno) >= epsilon:
+        guess = guess - (((guess ** 2) - squareno) / (2 * guess))
+    print(guess)
+if __name__ == "__main__":
+    main()
