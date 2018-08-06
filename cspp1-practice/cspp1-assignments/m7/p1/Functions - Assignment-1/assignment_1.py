@@ -18,7 +18,7 @@ def paying_debt_off_in_a_year(unpaid_balance, yearly_interest_rate, monthly_paym
     return "Remaining balance: "+str(round(balance_copy, 2))
 def main():
     '''main function'''
-    ata = input()
+    data = input()
     data = data.split(' ')
     data = list(map(float, data))
     print(paying_debt_off_in_a_year(data[0], data[1], data[2]))
