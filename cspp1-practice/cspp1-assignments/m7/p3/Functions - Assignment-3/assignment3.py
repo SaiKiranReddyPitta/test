@@ -1,5 +1,9 @@
 '''
+<<<<<<< HEAD
 Author:Sai kiran pitta
+=======
+Author: Sai Kiran 
+>>>>>>> 1a3b67690cf7fb7cfa2c874456dd2be79ebcf86e
 Created on 06-08-2018
 
 '''
