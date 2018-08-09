@@ -12,7 +12,7 @@ def get_available_letters(letters_guessed):
     output = list('abcdefghijklmnopqrstuvwxyz')
     for i in letters_guessed:
         output.remove(i)
-    return ''.joins(output)
+    return ''.join(output)
 
 
 def main():
