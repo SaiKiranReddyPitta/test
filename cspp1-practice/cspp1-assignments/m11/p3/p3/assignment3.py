@@ -20,10 +20,10 @@ def isValidWord(word, hand, wordList):
     i_input = len(word)
     for i in word:	
     	if i in hand:
-    		count = count + 1
+    		count += 1
 
-    if i_input == count
-    	if word in wordList
+    if i_input == count:
+    	if word in wordList:
     		return True
     	else:
     		return False
