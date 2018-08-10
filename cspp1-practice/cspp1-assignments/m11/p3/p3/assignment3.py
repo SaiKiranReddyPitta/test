@@ -18,8 +18,8 @@ def isValidWord(word, hand, wordList):
     # TO DO ... <-- Remove this comment when you code this function
     count = 0
     i_input = len(word)
-    for i in word
-    	if i in hand
+    for i in word:	
+    	if i in hand:
     		count = count + 1
 
     if i_input = count
