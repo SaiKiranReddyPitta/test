@@ -4,45 +4,44 @@ Date: 10 August 2018
 Encoding: utf - 8
 '''
 
-def isValidWord(word, hand, wordList):
+def isvalidword(word, hand, wordlist):
     """
-    Returns True if word is in the wordList and is entirely
+    Returns True if word is in the wordlist and is entirely
     composed of letters in the hand. Otherwise, returns False.
 
-    Does not mutate hand or wordList.
-   
+    Does not mutate hand or wordlist.
+
     word: string
     hand: dictionary (string -> int)
-    wordList: list of lowercase strings
+    wordlist: list of lowercase strings
     """
     # TO DO ... <-- Remove this comment when you code this function
     count = 0
     i_input = len(word)
-    for i in word:	
-    	if i in hand:
-    		count += 1
+    for i in word:
+        if i in hand:
+            count += 1
 
     if i_input == count:
-    	if word in wordList:
-    		return True
-    	else:
-    		return False
-    else:
-    		return False
+        if word in wordlist:
+            return True
+        return False
+    return False
 
 
 def main():
-	word=input()
-	n=int(input())
-	adict={}
-	for i in range(n):
-		data=input()
-		l=data.split()
-		adict[l[0]]=int(l[1])
-	l2=input().split()
-	print(isValidWord(word,adict,l2))
-		
+    '''
+    main function
+    '''
+    word = input()
+    n_input = int(input())
+    adict = {}
+    for i in range(n_input):
+        data = input()
+        l_inp = data.split()
+        adict[l_inp[0]] = int(l_inp[1])
+    abc = input().split()
+    print(isvalidword(word, adict, abc))
 
-
-if __name__== "__main__":
-	main()
+if __name__ == "__main__":
+    main()
