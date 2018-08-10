@@ -21,7 +21,7 @@ def updatehand(hand, word):
     # TO DO ... <-- Remove this comment when you code this function
 
     hand = list(word)
-    for i in hand:
+    for i in word:
         if i in list(hand.keys()):
             hand[i] -= 1
     return hand
