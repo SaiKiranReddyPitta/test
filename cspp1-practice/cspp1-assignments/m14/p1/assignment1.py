@@ -6,7 +6,7 @@ import string
 class cipher:
     def __init__(self, value):
         self.value = value
-    def __len__(self)
+    def __len__(self):
         count = 0
         for i in self.value:
             count += 1
@@ -19,7 +19,7 @@ class cipher:
         upper_alphabet = "" + string.ascii_uppercase + string.ascii_uppercase
         shift_string = ""
         l = len(self.value)
-        for i in range(0, l)
+        for i in range(0, l):
             if self.value[i] in small_alphabet:
                 shift_string += small_alphabet[small_alphabet.index(self.value[i]) + shift_number]
             elif self.value[i] in upper_alphabet:
@@ -29,9 +29,9 @@ class cipher:
         return shift_string
 
 def main():
-'''
-main function
-'''
+    '''
+    main function
+    '''
     data_input = input()
     shift_number = int(input())
     cipher_object = cipher(data_input)
