@@ -141,7 +141,7 @@ class Message(object):
 def main():
     ''' Function to handle testcases '''
     input_i = input()
-    data = message(input_i)
+    data = Message(input_i)
     shift = int(input())
     print(shift)
     print(data.build_shift_dict(shift))
