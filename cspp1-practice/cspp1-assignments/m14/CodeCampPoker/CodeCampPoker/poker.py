@@ -1,8 +1,55 @@
 '''
-    Write a program to evaluate poker hands and determine the winner
-    Read about poker hands here.
-    https://en.wikipedia.org/wiki/List_of_poker_hands
+    Author: Sai Kiran Reddy
+    date : 21-08-2018
 '''
+def make_dict(hand):
+    '''1st function'''
+    dict_a = {}
+    for i in hand:
+       if i[0] in dict_a:
+            dict_a[i[0]] += 1
+       else:
+            dict_a[i[0]] = 1
+    return dict_a
+
+def is_four_of_a_kind(hand):
+    '''2nd function'''
+    my_newdict = make_dict(hand)
+    if 4 in list(my_newdict.values()):
+        return True
+    return False
+
+def is_three_of_a_kind(hand):
+    '''3rd function'''
+    my_newdict = make_dict(hand)
+    if 3 in list(my_newdict.values()):
+        return True
+    return False
+
+def is_one_pair(hand):
+    '''4th function'''
+    my_newdict = make_dict(hand)
+    if 2 in list(my_newdict.values()):
+        return True
+    return False
+
+def is_full_house(hand):
+    '''5th function'''
+    my_newdict = make_dict(hand)
+    if 3 in list(my_newdict.values()):
+        if 2 in list(my_newdict.values()):
+            return True
+    return False
+
+def is_two_pair(hand):
+    '''6th function'''
+    my_newdict = make_dict(hand)
+    count = 0
+    if list(my_newdict.values()) == 2:
+        count += 1
+    if count == 2:
+        return True
+    return False
 
 def is_straight(hand):
     '''
@@ -14,7 +61,24 @@ def is_straight(hand):
         Think of an algorithm: given the card face value how to check if it a straight
         Write the code for it and return True if it is a straight else return False
     '''
-    pass
+    # sorted_hand = str(hand.sort())
+    # sorted_hand = dict(sorted_hand())
+    face_value = []
+    sequenced_face_value = []
+    sequence = '23456789TJQKA'
+    for i in hand:
+        face_value.append(i[0])
+    adict = {'2':2, '3':3, '4':4, '5':5, '6':6, '7':7, '8':8, '9':9,
+             'T':10, 'J':11, 'Q':12, 'K':13, 'A':14}
+    for i in adict:
+        for j in face_value:
+            if i == j:
+                sequenced_face_value.append(i)
+    for k in range(len(sequence)-4):
+        if ''.join(sequenced_face_value) == sequence[k:k+5]:
+            return 1
+    return 0
+
 
 def is_flush(hand):
     '''
@@ -25,7 +89,11 @@ def is_flush(hand):
         Think of an algorithm: given the card suite how to check if it is a flush
         Write the code for it and return True if it is a flush else return False
     '''
-    pass
+    suit_value = hand[0][1]
+    for i in hand:
+        if suit_value != i[1]:
+            return False
+    return True
 
 def hand_rank(hand):
     '''
@@ -38,7 +106,7 @@ def hand_rank(hand):
 
     # By now you should have seen the way a card is represented.
     # If you haven't then go the main or poker function and print the hands
-    # Each card is coded as a 2 character string. Example Kind of Hearts is KH
+    # Each card is coded as a 2 character string. Example King of Hearts is KH
     # First character for face value 2,3,4,5,6,7,8,9,T,J,Q,K,A
     # Second character for the suit S (Spade), H (Heart), D (Diamond), C (Clubs)
     # What would be the logic to determine if a hand is a straight or flush?
@@ -51,7 +119,24 @@ def hand_rank(hand):
     # third would be a straight with the return value 1
     # any other hand would be the fourth best with the return value 0
     # max in poker function uses these return values to select the best hand
-    return 1
+    if is_straight(hand) and is_flush(hand):
+        return 8
+    if is_four_of_a_kind(hand):
+        return 7
+    if is_full_house(hand):
+        return 6
+    if is_flush(hand):
+        return 5
+    if is_straight(hand):
+        return 4
+    if is_three_of_a_kind(hand):
+        return 3
+    if is_two_pair(hand):
+        return 2
+    if is_one_pair(hand):
+        return 1
+    return 0
+
 
 def poker(hands):
     '''
