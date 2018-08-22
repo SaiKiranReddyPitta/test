@@ -77,7 +77,7 @@ class Message():
         '''
         self.message_text = text
         self.valid_words = load_words("words.txt")
-        self.shift_dictry = {
+        self.shift_dictry = {}
 
     ### DO NOT MODIFY THIS METHOD ###
     def get_message_text(self):
