@@ -79,12 +79,8 @@ class Message():
         self.valid_words = load_words("words.txt")
         self.shift_dictnry = {}
 
-
-
-
-
     ### DO NOT MODIFY THIS METHOD ###
-    def get_message_text(self)
+    def get_message_text(self):
         '''
         Used to safely access self.message_text outside of the class
 
