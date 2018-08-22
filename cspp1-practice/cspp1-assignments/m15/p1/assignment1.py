@@ -152,7 +152,7 @@ class PlaintextMessage(Message):
     ''' PlaintextMessage class '''
     ### DO NOT MODIFY THIS METHOD ###
     def __init__(self, text, shift):
-        '''
+        ''
         Initializes a PlaintextMessage object
 
         text (string): the message's text
