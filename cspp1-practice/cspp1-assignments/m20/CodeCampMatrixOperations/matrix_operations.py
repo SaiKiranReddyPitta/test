@@ -12,12 +12,15 @@ for i in range(0,row[0]):
 	c.append(a)
 #print(c)
 l = []
+l2 = []
 result = [[b[i][j] + c[i][j]  for j in range(len(b[0]))] for i in range(len(b))]
   
 # for r in result:
 #     print(r)
 l.append(result)
 print(l)
+l2 = [e for e in l if e]
+print(l2)
 
 # Multiplication
 m = [] 
