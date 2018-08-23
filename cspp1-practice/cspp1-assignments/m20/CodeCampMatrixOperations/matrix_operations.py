@@ -35,7 +35,7 @@ def add_matrix(m_1, m_2, row_1, row_2, col_1, col_2):
         error message should be "Error: Matrix shapes invalid for addition"
     '''
 
-    if row_1 == row_2 and col_1 == col_2:    
+    if row_1 == row_2 and col_1 == col_2:
         addition_matrix = []
         for i in range(0, row_1):
             temp = []
@@ -57,7 +57,7 @@ def read_matrix():
 
     dimensions = input().split(",")
     row_value = int(dimensions[0])
-    column_value = int(dimensions[1])  
+    column_value = int(dimensions[1])
     mat = []
     # for i in range(n):
     #     mat.append([])
@@ -75,7 +75,7 @@ def read_matrix():
         for _ in i:
             count += 1
         if count != column_value:
-            flag = False   
+            flag = False
 
     return mat, row_value, column_value, flag
 
