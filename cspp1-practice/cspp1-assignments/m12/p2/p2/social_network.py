@@ -12,11 +12,19 @@ def follow(network, arg1, arg2):
         so, this should result in adding arg2 to the followers list of arg1
         update the network dictionary and return it
     '''
-    network = {}
-        for i in range (0, len(list), 2):
-            if list[i] in network:
-                network[l_new[0]].append(i)
-        return network
+    # network = {}
+        # for i in range (0, len(list), 2):
+        #     if list[i] in network:
+        #         network[l_new[0]].append(i)
+        # return network
+    if arg1 in network:
+        network[arg1].append(arg2)
+    else:
+        follow_list = []
+        follow_list.append(arg2)
+        network[arg1] = follow_list
+    return network
+
 def unfollow(network, arg1, arg2):
     '''
         3 arguments are passed to this function
@@ -26,11 +34,11 @@ def unfollow(network, arg1, arg2):
         so, this should result in removing arg2 from the followers list of arg1
         update the network dictionary and return it
     '''
-    network = {}
-        for i in range (0, len(list), 2):
-            if list[i] not in network:
-                network[l_new[0]].append(i)
-        return network
+    # network = {}
+    #     for i in range (0, len(list), 2):
+    #         if list[i] not in network:
+    #             network[l_new[0]].append(i)
+    return network
 def delete_person(network, arg1):
     '''
         2 arguments are passed to this function
@@ -41,17 +49,18 @@ def delete_person(network, arg1):
         also, before deleting arg1, remove arg1 from the everyone's followers list
         update the network dictionary and return it
     '''
-    network = {}
-        for i in range (0, len(list), 2):
-            if list[i] in network:
-                network[l_new[0]].delete(i)
-         return network
+    # network = {}
+    #     for i in range (0, len(list), 2):
+    #         if list[i] in network:
+    #             network[l_new[0]].delete(i)
+    return network
 def main():
     '''
         handling testcase input and printing output
     '''
     network = eval(input())
     lines = int(input())
+    # print(network)
     for i in range(lines):
         i += 1
         line = input()
