@@ -15,7 +15,6 @@ def isvalidinput(board):
 		if (x_sum - o_sum not in (0, 1, -1)):
 			print("invalid game")
 			return
-			return
 		return True
 		
 
