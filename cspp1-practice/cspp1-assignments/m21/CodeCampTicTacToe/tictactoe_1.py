@@ -30,6 +30,6 @@ def main():
        col_1 = input().split(' ')
        game.append(col_1)
     tic_tac_toe(game)
-    if __name__ == '__main__':
+if __name__ == '__main__':
     main()
     
