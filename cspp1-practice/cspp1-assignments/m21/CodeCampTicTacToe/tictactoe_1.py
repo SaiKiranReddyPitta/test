@@ -45,9 +45,9 @@ def Checkwinner(board):
 
 	if winner: #and winner in 'xo': #winner == x or #winner == o #for only either horizontal or vertical
 		return winner
-	if winner:
+	if winner1:
 		return winner
-	if winner:
+	if winner2:
 		return winner
 	else:
 		return "draw"
