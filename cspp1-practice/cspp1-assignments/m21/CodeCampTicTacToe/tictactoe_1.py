@@ -1,66 +1,66 @@
 
-def isvalidinput(board):
-	x_sum = 0
-	o_sum = 0
-	
-	sum = 0
-	for i in board:
-		x_sum += i.count('x')
-		o_sum += i.count('o')  #remove and watch x_sum and o_sum 
-	
-		sum += i.count('o') + i.count('x') + i.count(".")
-		if sum != 9:
-			print("invalid input") 
-			return
-		if (x_sum - o_sum not in (0, 1, -1)):
-			print("invalid game")
-			return
-		return True
-		
-
-def checkhorizontal(board):
-	for i in range(len(board)):
-		if board[i][0] == board[i][1] and board[i][1] == board[i][2]:
-			return board[i][0]
-
-def checkvertical(board):
-	for i in range(len(board)):
-		if board[0][i] == board[1][i] and board[1][i] == board[2][i]:
-			return board[0][i]
-
-def checkdiagonal(board):
-	if board[0][0] == board[1][1] and board[1][1] == board[2][2]:
-		return board[0][0]
-	if board[0][2] == board[1][1] and board[1][1] == board[2][0]:
-		return board[0][2]
-
-def Checkwinner(board):
-	winner = checkhorizontal(board)
-	
-	winner1 = checkvertical(board)
-	
-	winner2 = checkdiagonal(board)
-	if (winner and winner1) or (winner1 and winner2) or (winner2 and winner):
-		print("invalid game")
-
-	if winner: #and winner in 'xo': #winner == x or #winner == o #for only either horizontal or vertical
-		return winner
-	if winner1:
-		return winner
-	if winner2:
-		return winner
-	else:
-		return "draw"
-
+def tic_tac_toe(game):   
+   winner = []
+   for row in game:
+       if row[0] == row[1] == row[2]:
+           winner.append(row[0])
+   for i in range(0,3):
+       if game[0][i] == game[1][i] == game[2][i]:
+           winner.append(game[0][i])
+   if game[0][0] == game[1][1] == game[2][2]:
+           winner.append(game[0][0])
+   if game[2][0] == game[1][1] == game[0][2]:
+       winner.a ppend(game[0][2])
+   if len(winner) == 0:
+       print('draw')
+       return None
+   if len(winner) == 1:
+       if winner[0] == 'x' or winner[0] == 'o':
+           print(winner[0])
+       else:
+           print("invalid input")
+       return winner[0]
+   else:
+       print("invalid game")
+       return None
 def main():
-    '''main function'''
-    board = []
-    for i in range (3):
-    	board.append(input().split())
-    if isvalidinput(board):
-    	print("")
-    #print(board)
-    print(Checkwinner(board))
-
+   game = []
+   for _ in range(0, 3):
+       col_1 = input().split(' ')
+       game.append(col_1)
+   tic_tac_toe(game)
 if __name__ == '__main__':
-    main()
+   main()
+def tic_tac_toe(game):
+   winner = []
+   for row in game:
+       if row[0] == row[1] == row[2]:
+           winner.append(row[0])
+   for i in range(0,3):
+       if game[0][i] == game[1][i] == game[2][i]:
+           winner.append(game[0][i])
+   if game[0][0] == game[1][1] == game[2][2]:
+           winner.append(game[0][0])
+   if game[2][0] == game[1][1] == game[0][2]:
+       winner.append(game[0][2])
+   if len(winner) == 0:
+       print('draw')
+       return None
+   if len(winner) == 1:
+       if winner[0] == 'x' or winner[0] == 'o':
+           print(winner[0])
+       else:
+           print("invalid input")
+       return winner[0]
+   else:
+       print("invalid game")
+       return None
+def main():
+   game = []
+   for _ in range(0, 3):
+       col_1 = input().split(' ')
+       game.append(col_1)
+   tic_tac_toe(game)
+if __name__ == '__main__':
+   main()
+
