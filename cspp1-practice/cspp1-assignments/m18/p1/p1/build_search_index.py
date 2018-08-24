@@ -1,9 +1,7 @@
 '''
-Author = Sai Kiran Reddy Pitta
-Roll number = 20186002
+Author: Sai Kiran Reddy Pitta
+Date: 24-08-2018
 '''
-import re
-
 '''
     Tiny Search Engine - Part 1 - Build a search index
 
@@ -22,61 +20,61 @@ import re
     {
         word1: [(doc_id, frequency),(doc_id, frequency),...],
         word2: [(doc_id, frequency),(doc_id, frequency),...],
+        .
+        .
     }
 '''
 # helper function to load the stop words from a file
-def load_stopwords(filename):
+def load_stopwordslist(file_name):
     '''
         loads stop words from a file and returns a dictionary
     '''
     stopwords = {}
-    with open(filename, 'r') as f_stopwords:
+    with open(file_name, 'r') as f_stopwords:
         for line in f_stopwords:
             stopwords[line.strip()] = 0
     return stopwords
-
-
 def word_list(text):
     '''
         Change case to lower and split the words using a SPACE
         Clean up the text by remvoing all the non alphabet characters
         return a list of words
     '''
-    #pass
-    text = re.sub('[^ a-z]', '', text.lower())
-    text = text.strip('!@#$%&*()-_;:"?/.,')
-    text = text.replace("'", "")
-    text = text.split()
-    return text
-
-def build_search_index(docs):
+    str1 = ''
+    for i in text:
+        for j in i:
+            if 'a' <= j <= 'z' or j == ' ':
+                str1 += j
+    list1 = str1.split()
+    extra = load_stopwordslist("stopwords.txt")
+    list2 = list1[:]
+    for i in list2:
+        if i in extra:
+            list1.remove(i)
+    return list1
+def build_search_index(docslist):
     '''
-        Process the docs step by step as given below
+        Process the docslist step by step as given below
     '''
-
     # initialize a search index (an empty dictionary)
-
-    # iterate through all the docs
     # keep track of doc_id which is the list index corresponding the document
     # hint: use enumerate to obtain the list index in the for loop
-
-        # clean up doc and tokenize to words list
-
-        # add or update the words of the doc to the search index
-
+    # clean up doc and tokenize to words list
+    # add or update the words of the doc to the search index
     # return search index
-    #pass
-
-    search_index = {}
-    a_a = []
-    for i in docs:
-        #a_a = enumerate(i)
-        #b_b += text(a_a[1])
-        a_a = a_a + text(i)
-        search_index = dict(collection.counter(a_a))
-
-    return search_index
-
+    import collections
+    len_docslist = len(docslist)
+    searchindex = {}
+    for i in range(len_docslist):
+        docslist[i] = word_list(docslist[i])
+        docslist[i] = collections.Counter(docslist[i])
+    for i in range(len_docslist):
+        for j in docslist[i]:
+            if j in searchindex:
+                searchindex[j].append((i, docslist[i][j]))
+            else:
+                searchindex[j] = [(i, docslist[i][j])]
+    return searchindex
 # helper function to print the search index
 # use this to verify how the search index looks
 def print_search_index(index):
@@ -86,8 +84,7 @@ def print_search_index(index):
     keys = sorted(index.keys())
     for key in keys:
         print(key, " - ", index[key])
-
-# main function that loads the docs from files
+# main function that loads the docslist from files
 def main():
     '''
         main function
@@ -98,11 +95,9 @@ def main():
     lines = int(input())
     # iterate through N times and add documents to the list
     for i in range(lines):
-        documents.append(input())
+        documents.append(input().lower())
         i += 1
-
     # call print to display the search index
     print_search_index(build_search_index(documents))
-
 if __name__ == '__main__':
     main()
