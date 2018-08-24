@@ -38,6 +38,9 @@ def unfollow(network, arg1, arg2):
     #     for i in range (0, len(list), 2):
     #         if list[i] not in network:
     #             network[l_new[0]].append(i)
+    #return network
+    if arg2 in network[arg1]:
+        network[arg1].remove(arg2)
     return network
 def delete_person(network, arg1):
     '''
@@ -53,6 +56,13 @@ def delete_person(network, arg1):
     #     for i in range (0, len(list), 2):
     #         if list[i] in network:
     #             network[l_new[0]].delete(i)
+    # return network
+    for del_prsn in network:
+        if arg1 in network[del_prsn]:
+            network[del_prsn].remove(arg1)
+
+    if arg1 in network:
+        del network[arg1]
     return network
 def main():
     '''
