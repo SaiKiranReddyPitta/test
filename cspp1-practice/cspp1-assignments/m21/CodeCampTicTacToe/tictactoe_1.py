@@ -1,6 +1,6 @@
 
 def tic_tac_toe(game):   
-   winner = []
+    winner = []
     for row in game:
         if row[0] == row[1] == row[2]:
            winner.append(row[0])
@@ -24,7 +24,7 @@ def tic_tac_toe(game):
        print("invalid game")
        return None
 def main():
-   game = []
+    game = []
     for _ in range(0, 3):
        col_1 = input().split(' ')
        game.append(col_1)
@@ -53,14 +53,14 @@ def main():
            print("invalid input")
         return winner[0]
     else:
-       print("invalid game")
+        print("invalid game")
         return None
 def main():
-   game = []
+    game = []
     for _ in range(0, 3):
        col_1 = input().split(' ')
        game.append(col_1)
-   tic_tac_toe(game)
+    tic_tac_toe(game)
 if __name__ == '__main__':
-   main()
+    main()
 
