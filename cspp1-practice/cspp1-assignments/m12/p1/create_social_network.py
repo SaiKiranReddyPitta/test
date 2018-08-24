@@ -40,7 +40,7 @@ def create_social_network(data):
             list_1 = list_i[1].split(",")
             if list_i[0] in dictionary:
                 dictionary[list_i[1]].append(list_1)
-            else
+            else:
                 dictionary[list_i[0]] = list_1
     return dictionary
 
@@ -49,7 +49,7 @@ def main():
     '''
         handling testcase input and printing output
     '''
-    string = '':
+    string = ''
     lines = int(input())
     for i in range(lines):
         i += 1
