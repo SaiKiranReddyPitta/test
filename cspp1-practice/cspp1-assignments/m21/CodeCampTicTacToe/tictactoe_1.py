@@ -10,7 +10,7 @@ def tic_tac_toe(game):
    if game[0][0] == game[1][1] == game[2][2]:
            winner.append(game[0][0])
    if game[2][0] == game[1][1] == game[0][2]:
-       winner.a ppend(game[0][2])
+       winner.append(game[0][2])
    if len(winner) == 0:
        print('draw')
        return None
