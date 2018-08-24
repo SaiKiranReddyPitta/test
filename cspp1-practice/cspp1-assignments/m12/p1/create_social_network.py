@@ -3,7 +3,7 @@
     Date: 11-08-2018
 '''
 
-def create_social_network(data):          
+def create_social_network(data):
     '''
         The data argument passed to the function is a string
         It represents simple social network data
@@ -39,7 +39,7 @@ def create_social_network(data):
             list_i = input_i.split(" follows ")
             list_1 = list_i[1].split(",")
             if list_i[0] in dictionary:
-                dictionary[list_i[1]].append(list_1)
+                dictionary[list_i[0]].append(list_1)
             else:
                 dictionary[list_i[0]] = list_1
     return dictionary
