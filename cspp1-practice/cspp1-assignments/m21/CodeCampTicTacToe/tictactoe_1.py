@@ -1,12 +1,12 @@
 
-def tic_tac_toe(game):   
+def tic_tac_toe(game):
     winner = []
     for row in game:
         if row[0] == row[1] == row[2]:
-           winner.append(row[0])
+            winner.append(row[0])
     for i in range(0,3):
         if game[0][i] == game[1][i] == game[2][i]:
-           winner.append(game[0][i])
+            winner.append(game[0][i])
     if game[0][0] == game[1][1] == game[2][2]:
            winner.append(game[0][0])
     if game[2][0] == game[1][1] == game[0][2]:
