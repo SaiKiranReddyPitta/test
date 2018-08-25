@@ -7,6 +7,8 @@ def tokenize(string):
     '''
     sub function
     '''
+    our_dict = {}
+
     string_lines = input()
     string_1 = ''
     for i in string:
@@ -18,6 +20,7 @@ def main():
     '''
     Main function
     '''
+
     string = input()
     print(tokenize(string))
     
@@ -25,12 +28,3 @@ def main():
 if __name__ == '__main__':
     main()
 
-# def ci(data):
-#     for i in range(int(data)):
-#         l_l = data.split()
-#         i += 1
-#     return l_l
-
-# def main():
-#     data = input()
-#     print(ci(data))
