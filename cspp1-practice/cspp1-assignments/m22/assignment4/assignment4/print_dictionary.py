@@ -1,15 +1,20 @@
 '''
-Write a function to print a dictionary with the keys in sorted order along with the
-frequency of each word. Format of the printing should be one key per line and separate
-the key and frequency with a SPACE - SPACE.
+Author: Sai Kiran Reddy Pitta
+Date: 25-08-2018
 '''
 
 def print_dictionary(dictionary):
+    '''
+    sub string
+    '''
     keys = sorted(dictionary.keys())
     for key_d in keys:
         print(key_d, '-', dictionary[key_d])
 
 def main():
+    '''
+    main string
+    '''
     dictionary = eval(input())
     print_dictionary(dictionary)
 
