@@ -1,13 +1,36 @@
 '''
-Write a function to tokenize a given string and return a dictionary with the frequency of
-each word
+Author: Sai Kiran Reddy Pitta
+Date: 25-08-2018
 '''
-
+import re
 def tokenize(string):
-    pass
+    '''
+    sub function
+    '''
+    string_lines = input()
+    string_1 = ''
+    for i in string:
+        string_1 = re.sub('[^A-Za-z0-9]', '', string.lower())
+        string_1 = input().split()
+    return string_1
             
 def main():
-    pass
+    '''
+    Main function
+    '''
+    string = input()
+    print(tokenize(string))
+    
 
 if __name__ == '__main__':
     main()
+
+# def ci(data):
+#     for i in range(int(data)):
+#         l_l = data.split()
+#         i += 1
+#     return l_l
+
+# def main():
+#     data = input()
+#     print(ci(data))
