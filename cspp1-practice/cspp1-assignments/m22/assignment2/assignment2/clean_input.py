@@ -1,12 +1,17 @@
 '''
-Write a function to clean up a given string by removing the special characters and retain 
-alphabets in both upper and lower case and numbers.
+Author: Sai Kiran Reddy Pitta
+Date: 25-08-2018
 '''
-
+import re
 def clean_string(string):
-    pass
-
+    string_input = ''
+    for _ in string:
+        string_input = re.sub('[^A-Za-z0-9]', '', string.lower())
+    return string_input
 def main():
+    '''
+    main function
+    '''
     string = input()
     print(clean_string(string))
 
