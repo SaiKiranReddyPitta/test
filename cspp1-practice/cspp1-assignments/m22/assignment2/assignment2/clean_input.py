@@ -4,6 +4,9 @@ Date: 25-08-2018
 '''
 import re
 def clean_string(string):
+    '''
+    sub string
+    '''
     string_input = ''
     for _ in string:
         string_input = re.sub('[^A-Za-z0-9]', '', string.lower())
